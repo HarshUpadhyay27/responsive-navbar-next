@@ -22,13 +22,13 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className={cn("h-screen w-16 flex flex-col bg-white dark:bg-black border-r p-2")}>
+    <aside className={cn("h-full min-h-screen w-16 flex flex-col bg-white dark:bg-black border-r p-2")}>
       <div className="flex items-center justify-center">
         <Image src="/logo.png" alt="Logo" width={30} height={30} />
       </div>
 
       <nav className="flex-1 mt-4">
-        <ul className="space-y-2 flex flex-col items-center">
+        <ul className="space-y-1 flex flex-col items-center">
           {[
             { href: "/", icon: Home },
             { href: "/dashboard", icon: LayoutDashboard },
@@ -47,14 +47,14 @@ const Sidebar = () => {
                   pathname === href ? "bg-gray-300 dark:bg-gray-700" : ""
                 )}
               >
-                <Icon size={18} />
+                <Icon size={16} />
               </Link>
             </li>
           ))}
         </ul>
       </nav>
 
-      <div className="flex flex-col items-center space-y-2 mt-auto">
+      <div className="flex flex-col items-center space-y-1 mt-8">
         {[
           { href: "/billing", icon: CreditCard },
           { href: "/messages", icon: MessageSquare },
@@ -67,13 +67,13 @@ const Sidebar = () => {
               pathname === href ? "bg-gray-300 dark:bg-gray-700" : ""
             )}
           >
-            <Icon size={18} />
+            <Icon size={16} />
           </Link>
         ))}
       </div>
 
       <div className="flex items-center justify-center p-2 relative">
-        <Avatar className="w-8 h-8">
+        <Avatar className="w-8 h-8 mt-4">
           <AvatarImage src="https://cdn-icons-png.flaticon.com/512/4974/4974985.png" alt="User" />
           <AvatarFallback>U</AvatarFallback>
         </Avatar>
